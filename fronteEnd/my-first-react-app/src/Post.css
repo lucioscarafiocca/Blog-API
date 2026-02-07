@@ -1,0 +1,3 @@
+.logo-parent * {
+  pointer-events: none;
+}
