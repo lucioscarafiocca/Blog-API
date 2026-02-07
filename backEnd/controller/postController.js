@@ -81,7 +81,7 @@ async function UserLoginPost(req, res) {
     const jwt = issueJWT(user)
     res.json({ user, token: jwt.token, exp: jwt.expires })
   } else {
-    res.status(400).json("password is wrong lol")
+    res.status(400).json("password is wrong ")
   }
 }
 
@@ -109,7 +109,7 @@ async function PostGet(req, res) {
     if (!post.published && user && user.blogAuthor) {
       res.json({ ...post, user })
     } else if (!post.published && user && !user.blogAuthor) {
-      res.json("not allowed to see this one faggot :)")
+      res.json("not allowed to see this one  :)")
     } else {
       res.json({ ...post, user })
     }
@@ -137,7 +137,7 @@ async function UpdatePostPut(req, res) {
     const updatedPost = await db.UpdatePost(postId, title, text, publish)
     res.json(updatedPost)
   } else {
-    res.status(400).json("FORBIDDEN LOL")
+    res.status(400).json("FORBIDDEN ")
   }
 }
 
